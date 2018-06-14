@@ -70,7 +70,7 @@ class PersianCalendarPicker extends React.Component {
   }
 
   onDayChange(day) {
-    this.setState({day: day.day}, () => { this.onDateChange(); });
+    this.setState({day: day.day}, () => { this.onSelectDate(); });
   }
 
   onMonthChange(month) {
@@ -86,6 +86,18 @@ class PersianCalendarPicker extends React.Component {
   }
 
   onDateChange() {
+    let {
+      day,
+      month,
+      year,
+    } = this.state;
+    let date = jMoment(year + '/' + (month + 1) + '/' + day, 'jYYYY/jM/jD');
+    let date2 = new Date(date.year(), date.month(), date.date());
+
+    this.setState({date: date});
+  }
+
+  onSelectDate(){
     let {
       day,
       month,
