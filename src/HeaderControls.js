@@ -138,7 +138,7 @@ class HeaderControls extends React.Component {
     return (
       <View style={styles.headerWrapper}>
         <View style={styles.monthSelector}>
-          {next}
+          {previous}
         </View>
         <View>
           <Text style={[styles.monthLabel, textStyle]}>
@@ -146,9 +146,8 @@ class HeaderControls extends React.Component {
           </Text>
         </View>
         <View style={styles.monthSelector}>
-          {previous}
+          {next}
         </View>
-
       </View>
     );
   }

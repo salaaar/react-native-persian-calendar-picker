@@ -92,11 +92,11 @@ const styles = StyleSheet.create({
     width: normalize(80),
   },
   prev: {
-    textAlign: 'right',
+    textAlign: 'left',
     fontSize: normalize(14),
   },
   next: {
-    textAlign: 'left',
+    textAlign: 'right',
     fontSize: normalize(14),
   },
   yearLabel: {
