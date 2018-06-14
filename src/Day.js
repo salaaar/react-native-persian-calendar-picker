@@ -47,6 +47,7 @@ class Day extends React.Component {
 
   render() {
     let textStyle = this.props.textStyle;
+    const isBefore = (new Date() - this.props.date - 86400000) > 0;
     if (this.props.selected) {
       let selectedDayColorStyle = this.props.selectedDayColor ? {backgroundColor: this.props.selectedDayColor} : {};
       let selectedDayTextColorStyle = this.props.selectedDayTextColor ? {color: this.props.selectedDayTextColor} : {};
@@ -79,8 +80,9 @@ class Day extends React.Component {
             <TouchableOpacity
               style={styles.dayButton}
               onPress={() => this.onDayChange()}
+              disabled={isBefore}
             >
-              <Text style={[styles.dayLabel, textStyle]}>
+              <Text style={[styles.dayLabel, textStyle, {color : isBefore ? styles.disabledTextColor.color : '#000'}]}>
                 {this.props.day}
               </Text>
             </TouchableOpacity>
